@@ -22,19 +22,29 @@
 #'   "Field Label" = "Ptient name"
 #' )
 #' create_fields(!!!x)
-
 create_fields <- function(..., df = NULL) {
   if (!missing(...) & !is.null(df)) {
     stop("Use either `...` or `df` but not both.")
   }
 
-  dots <- rlang::list2(...)
-
-  if (!all(names(dots) %in% dd_cols)) {
-    stop("Invalid column names found. See `?dd_cols` for allowable column names.")
-  }
-  
-  tibble::as_tibble(dots)
+  if (!missing(df) & !is.null(df)) {
+    if(!"data.frame" %in% class(df)) {
+      stop("`df` must be a data frame.")
+    }
+    
+    if(!validate_columns(df)) {
+      stop("Invalid column names found. See `?get_dd_cols` for allowable column names.")
+    }
+    
+    add_missing_columns(df)
+  } else {
+    dots <- rlang::list2(...)
+    
+    if (!validate_columns(dots)) {
+      stop("Invalid column names found. See `?get_dd_cols` for allowable column names.")
+    }
+    
+    df <- tibble::as_tibble(dots)
+    add_missing_columns(df)
+  }  
 }
-
-
