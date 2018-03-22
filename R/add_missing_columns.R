@@ -2,7 +2,7 @@
 #'
 #' Given a data frame containing some columns for a data dictionary, add the
 #' remaining (populated with NAs).
-#' 
+#'
 #' @param df Data frame to which columns should be added.
 #' @export
 #' @examples

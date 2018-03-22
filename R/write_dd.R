@@ -13,7 +13,8 @@ write_dd <- function(df, filename = "data_dictionary.csv") {
       "Field Note",
       "Choices, Calculations, OR Slider Labels",
       "Branching Logic (Show field only if...)"
-    ))
+    )
+  )
 
   write.csv(df, filename, na = "", quote = to_quote, row.names = FALSE)
 }
