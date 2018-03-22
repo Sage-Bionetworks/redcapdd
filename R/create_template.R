@@ -7,6 +7,6 @@
 #' @author Kara Woo
 create_dd_template <- function() {
   cols <- dd_cols
-  cols <- rlang::enquo(cols)
-  tibble::tribble(cols)
+  cols <- enquo(cols)
+  tribble(cols)
 }

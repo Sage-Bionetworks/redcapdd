@@ -38,13 +38,13 @@ create_fields <- function(..., df = NULL) {
     
     add_missing_columns(df)
   } else {
-    dots <- rlang::list2(...)
+    dots <- list2(...)
     
     if (!validate_columns(dots)) {
       stop("Invalid column names found. See `?get_dd_cols` for allowable column names.")
     }
     
-    df <- tibble::as_tibble(dots)
+    df <- as_tibble(dots)
     add_missing_columns(df)
   }  
 }

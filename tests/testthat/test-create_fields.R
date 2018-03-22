@@ -1,13 +1,13 @@
 context("create_fields")
 
 test_that("create_fields throws error when both ... and df are provided", {
-  df <- tibble::tibble(`Field Type` = "text")
+  df <- tibble(`Field Type` = "text")
   expect_error(create_fields("Section Header" = "Part 1", df))
 })
 
 test_that("create_fields throws error when invalid columns are provided", {
   expect_error(create_fields(blah = 5))
-  expect_error(create_fields(df = tibble::tibble(blah = 5)))
+  expect_error(create_fields(df = tibble(blah = 5)))
 })
 
 test_that("create_fields throws an error when df is not a data frame", {
@@ -36,7 +36,7 @@ test_that("create_fields can take list in ...", {
 })
 
 test_that("create_fields can take tibble", {
-  mydf <- tibble::tibble(
+  mydf <- tibble(
     `Variable / Field Name` = "patient_name",
     `Field Label` = "Patient name"
   )
