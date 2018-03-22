@@ -1,0 +1,23 @@
+Package: redcapdd
+Version: 0.0.0.9000
+Title: Create REDCap Data Dictionaries
+Description: Supports the creation of data dictionaries as CSV files from which
+    'REDCap' (<http://projectredcap.org/>) can create data collection forms and
+    surveys.
+Authors@R: c(
+    person("Kara", "Woo", email = "kara.woo@sagebase.org", role = c("aut", "cre")),
+    person("Sage Bionetworks", role = c("cph"))
+    )
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+ByteCompile: true
+Depends:
+    R (>= 3.1.0)
+Imports:
+    tibble,
+    rlang
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 6.0.1.9000
+Remotes: r-lib/rlang
+Suggests: testthat
