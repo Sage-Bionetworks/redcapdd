@@ -19,7 +19,7 @@
 #' # When passing a list, it must be unquote-spliced
 #' x <- list(
 #'   "Variable / Field Name" = "patient_name",
-#'   "Field Label" = "Ptient name"
+#'   "Field Label" = "Patient name"
 #' )
 #' create_fields(!!!x)
 create_fields <- function(..., df = NULL) {
