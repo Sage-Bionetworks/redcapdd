@@ -30,7 +30,7 @@ create_fields <- function(..., df = NULL) {
 
   dots <- rlang::list2(...)
 
-  if (!all(names(dots) %in% .pkg_env$dd_cols)) {
+  if (!all(names(dots) %in% dd_cols)) {
     stop("Invalid column names found. See `?dd_cols` for allowable column names.")
   }
   

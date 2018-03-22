@@ -6,7 +6,7 @@
 #' @export
 #' @author Kara Woo
 create_dd_template <- function() {
-  cols <- .pkg_env$dd_cols
+  cols <- dd_cols
   cols <- rlang::enquo(cols)
   tibble::tribble(cols)
 }
