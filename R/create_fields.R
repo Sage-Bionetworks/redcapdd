@@ -2,6 +2,8 @@
 #'
 #' @param x An object (list or data frame) containing information for the fields
 #'   to be added.
+#' @param type A field type. One of: "checkbox", "dropdown", "notes", "radio",
+#'   "text", "truefalse".
 #' @return A tibble containing one or more fields in the data dictionary with
 #'   all required columns.
 #' @export
@@ -48,6 +50,76 @@ create_fields.list <- function(x) {
 }
 
 #' @export
+create_fields.NULL <- function(x) {
+  df <- create_dd_template()
+  df[1, ] <- NA
+  df
+}
+
+#' @export
 create_fields.default <- function(x) {
   stop("`x` must be a list or data frame.", call. = FALSE)
+}
+
+#' @rdname create_fields
+#' @export
+create_field_type <- function(type, x) {
+  if (!type %in% c("checkbox", "dropdown", "notes", "radio", "text", "truefalse")) {
+    stop(
+      paste0(
+        "Invalid field type. Options are: 'checkbox', 'dropdown', ",
+        "'notes', 'radio', 'text', 'truefalse'"
+      ),
+      call. = FALSE
+    )
+  }
+  if (missing(x)) {
+    df <- create_fields()
+  } else {
+    df <- create_fields(x)
+  }
+  if (!all(is.na(df$`Field Type`)) & !all(df$`Field Type` == type)) {
+    warning(
+      "Other values present in `Field Type` column have been overwritten",
+      call. = FALSE
+    )
+  }
+  df$`Field Type` <- type
+  df
+}
+
+#' @rdname create_fields
+#' @export
+create_checkbox_field <- function(x) {
+  create_field_type("checkbox", x)
+}
+
+#' @rdname create_fields
+#' @export
+create_dropdown_field <- function(x) {
+  create_field_type("dropdown", x)
+}
+
+#' @rdname create_fields
+#' @export
+create_notes_field <- function(x) {
+  create_field_type("notes", x)
+}
+
+#' @rdname create_fields
+#' @export
+create_radio_field <- function(x) {
+  create_field_type("radio", x)
+}
+
+#' @rdname create_fields
+#' @export
+create_text_field <- function(x) {
+  create_field_type("text", x)
+}
+
+#' @rdname create_fields
+#' @export
+create_truefalse_field <- function(x) {
+  create_field_type("truefalse", x)
 }
