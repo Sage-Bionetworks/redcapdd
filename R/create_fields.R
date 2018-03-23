@@ -22,7 +22,7 @@
 #'   "Field Label" = "Patient name"
 #' )
 #' create_fields(!!!x)
-#' 
+#'
 #' x <- list(
 #' `Variable / Field Name` = "patient_name",
 #' `Field Label` = "Patient name"
