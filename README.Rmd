@@ -1,0 +1,52 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+# redcapdd
+
+
+[![lifecycle](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
+
+The goal of redcapdd is to generate properly formatted data dictionaries for
+upload to REDCap.
+
+## Installation
+
+```{r, eval = FALSE} 
+devtools::install_github("Sage-Bionetworks/redcapdd")
+```
+
+## Examples
+
+You can create a new field with `create_fields()`. The result will have all of
+the columns required in a REDCap data dictionary.
+
+When called with no arguments, `create_fields()` provides a one-row data frame
+containing all NAs.
+
+```{r create_fields}
+library("redcapdd")
+create_fields()
+```
+
+You can provide as much information as you want to populate the field;
+`create_fields()` will fill out the rest of the columns with NAs.
+
+```{r create_fields_2}
+x <- list(
+  `Variable / Field Name` = "patient_name",
+  `Field Label` = "Patient name"
+)
+
+create_fields(x)
+```
