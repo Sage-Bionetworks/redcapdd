@@ -13,6 +13,3 @@ names required in a REDCap data dictionary.
 \description{
 Create empty data dictionary template
 }
-\author{
-Kara Woo
-}
