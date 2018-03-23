@@ -22,6 +22,12 @@
 #'   "Field Label" = "Patient name"
 #' )
 #' create_fields(!!!x)
+#' 
+#' x <- list(
+#' `Variable / Field Name` = "patient_name",
+#' `Field Label` = "Patient name"
+#' )
+#' create_fields(!!!x)
 create_fields <- function(..., df = NULL) {
   if (!missing(...) & !is.null(df)) {
     stop("Use either `...` or `df` but not both.")
