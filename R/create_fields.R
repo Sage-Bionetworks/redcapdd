@@ -2,8 +2,9 @@
 #'
 #' @param x An object (list or data frame) containing information for the fields
 #'   to be added.
-#' @param type A field type. One of: "checkbox", "dropdown", "notes", "radio",
-#'   "text", "truefalse".
+#' @param type A field type. One of: "calc", "checkbox", "descriptive",
+#'   "dropdown", "file", "notes", "radio", "slider", "sql", "text", "truefalse",
+#'   "yesno".
 #' @return A tibble containing one or more fields in the data dictionary with
 #'   all required columns.
 #' @export
@@ -90,14 +91,32 @@ create_field_type <- function(type, x) {
 
 #' @rdname create_fields
 #' @export
+create_calc_field <- function(x) {
+  create_field_type("calc", x)
+}
+
+#' @rdname create_fields
+#' @export
 create_checkbox_field <- function(x) {
   create_field_type("checkbox", x)
 }
 
 #' @rdname create_fields
 #' @export
+create_descriptive_field <- function(x) {
+  create_field_type("descriptive", x)
+}
+
+#' @rdname create_fields
+#' @export
 create_dropdown_field <- function(x) {
   create_field_type("dropdown", x)
+}
+
+#' @rdname create_fields
+#' @export
+create_file_field <- function(x) {
+  create_field_type("file", x)
 }
 
 #' @rdname create_fields
@@ -114,6 +133,18 @@ create_radio_field <- function(x) {
 
 #' @rdname create_fields
 #' @export
+create_slider_field <- function(x) {
+  create_field_type("slider", x)
+}
+
+#' @rdname create_fields
+#' @export
+create_sql_field <- function(x) {
+  create_field_type("sql", x)
+}
+
+#' @rdname create_fields
+#' @export
 create_text_field <- function(x) {
   create_field_type("text", x)
 }
@@ -122,4 +153,10 @@ create_text_field <- function(x) {
 #' @export
 create_truefalse_field <- function(x) {
   create_field_type("truefalse", x)
+}
+
+#' @rdname create_fields
+#' @export
+create_yesno_field <- function(x) {
+  create_field_type("yesno", x)
 }

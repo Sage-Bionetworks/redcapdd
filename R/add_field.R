@@ -3,8 +3,9 @@
 #' Adds a new field to a tibble containing existing fields.
 #'
 #' @inheritParams tibble::add_row
-#' @param .type A field type. One of: "checkbox", "dropdown", "notes", "radio",
-#'   "text", "truefalse".
+#' @param .type A field type. One of: "calc", "checkbox", "descriptive",
+#'   "dropdown", "file", "notes", "radio", "slider", "sql", "text", "truefalse",
+#'   "yesno".
 #' @export
 add_field <- tibble::add_row
 
@@ -24,14 +25,32 @@ add_field_type <- function(.data, ..., .type) {
 
 #' @rdname add_field
 #' @export
+add_calc_field <- function(.data, ...) {
+  add_field_type(.data, ..., .type = "calc")
+}
+
+#' @rdname add_field
+#' @export
 add_checkbox_field <- function(.data, ...) {
   add_field_type(.data, ..., .type = "checkbox")
 }
 
 #' @rdname add_field
 #' @export
+add_descriptive_field <- function(.data, ...) {
+  add_field_type(.data, ..., .type = "descriptive")
+}
+
+#' @rdname add_field
+#' @export
 add_dropdown_field <- function(.data, ...) {
   add_field_type(.data, ..., .type = "dropdown")
+}
+
+#' @rdname add_field
+#' @export
+add_file_field <- function(.data, ...) {
+  add_field_type(.data, ..., .type = "file")
 }
 
 #' @rdname add_field
@@ -48,6 +67,18 @@ add_radio_field <- function(.data, ...) {
 
 #' @rdname add_field
 #' @export
+add_slider_field <- function(.data, ...) {
+  add_field_type(.data, ..., .type = "slider")
+}
+
+#' @rdname add_field
+#' @export
+add_sql_field <- function(.data, ...) {
+  add_field_type(.data, ..., .type = "sql")
+}
+
+#' @rdname add_field
+#' @export
 add_text_field <- function(.data, ...) {
   add_field_type(.data, ..., .type = "text")
 }
@@ -56,4 +87,10 @@ add_text_field <- function(.data, ...) {
 #' @export
 add_truefalse_field <- function(.data, ...) {
   add_field_type(.data, ..., .type = "truefalse")
+}
+
+#' @rdname add_field
+#' @export
+add_yesno_field <- function(.data, ...) {
+  add_field_type(.data, ..., .type = "yesno")
 }

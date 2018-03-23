@@ -3,36 +3,55 @@
 \name{create_fields}
 \alias{create_fields}
 \alias{create_field_type}
+\alias{create_calc_field}
 \alias{create_checkbox_field}
+\alias{create_descriptive_field}
 \alias{create_dropdown_field}
+\alias{create_file_field}
 \alias{create_notes_field}
 \alias{create_radio_field}
+\alias{create_slider_field}
+\alias{create_sql_field}
 \alias{create_text_field}
 \alias{create_truefalse_field}
+\alias{create_yesno_field}
 \title{Create one or more fields in a REDCap data dictionary}
 \usage{
 create_fields(x)
 
 create_field_type(type, x)
 
+create_calc_field(x)
+
 create_checkbox_field(x)
 
+create_descriptive_field(x)
+
 create_dropdown_field(x)
+
+create_file_field(x)
 
 create_notes_field(x)
 
 create_radio_field(x)
 
+create_slider_field(x)
+
+create_sql_field(x)
+
 create_text_field(x)
 
 create_truefalse_field(x)
+
+create_yesno_field(x)
 }
 \arguments{
 \item{x}{An object (list or data frame) containing information for the fields
 to be added.}
 
-\item{type}{A field type. One of: "checkbox", "dropdown", "notes", "radio",
-"text", "truefalse".}
+\item{type}{A field type. One of: "calc", "checkbox", "descriptive",
+"dropdown", "file", "notes", "radio", "slider", "sql", "text", "truefalse",
+"yesno".}
 }
 \value{
 A tibble containing one or more fields in the data dictionary with

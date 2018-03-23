@@ -3,29 +3,47 @@
 \name{add_field}
 \alias{add_field}
 \alias{add_field_type}
+\alias{add_calc_field}
 \alias{add_checkbox_field}
+\alias{add_descriptive_field}
 \alias{add_dropdown_field}
+\alias{add_file_field}
 \alias{add_notes_field}
 \alias{add_radio_field}
+\alias{add_slider_field}
+\alias{add_sql_field}
 \alias{add_text_field}
 \alias{add_truefalse_field}
+\alias{add_yesno_field}
 \title{Add a new field.}
 \usage{
 add_field(.data, ..., .before = NULL, .after = NULL)
 
 add_field_type(.data, ..., .type)
 
+add_calc_field(.data, ...)
+
 add_checkbox_field(.data, ...)
 
+add_descriptive_field(.data, ...)
+
 add_dropdown_field(.data, ...)
+
+add_file_field(.data, ...)
 
 add_notes_field(.data, ...)
 
 add_radio_field(.data, ...)
 
+add_slider_field(.data, ...)
+
+add_sql_field(.data, ...)
+
 add_text_field(.data, ...)
 
 add_truefalse_field(.data, ...)
+
+add_yesno_field(.data, ...)
 }
 \arguments{
 \item{.data}{Data frame to append to.}
@@ -41,8 +59,9 @@ default: after last row.}
 \item{.after}{One-based row index where to add the new rows,
 default: after last row.}
 
-\item{.type}{A field type. One of: "checkbox", "dropdown", "notes", "radio",
-"text", "truefalse".}
+\item{.type}{A field type. One of: "calc", "checkbox", "descriptive",
+"dropdown", "file", "notes", "radio", "slider", "sql", "text", "truefalse",
+"yesno".}
 }
 \description{
 Adds a new field to a tibble containing existing fields.
