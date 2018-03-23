@@ -3,6 +3,8 @@
 
 # redcapdd
 
+[![Travis-CI Build
+Status](https://travis-ci.org/Sage-Bionetworks/redcapdd.svg?branch=master)](https://travis-ci.org/Sage-Bionetworks/redcapdd)
 [![lifecycle](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
 
 The goal of redcapdd is to generate properly formatted data dictionaries
