@@ -4,38 +4,30 @@
 \alias{create_fields}
 \title{Create one or more fields in a REDCap data dictionary}
 \usage{
-create_fields(..., df = NULL)
+create_fields(x)
 }
 \arguments{
-\item{...}{Elements of the data dictionary to be populated. Can be passed as
-individual arguments, or as a list. All columns not described will be
-populated with \code{NA}. If passing a list, it must be unquote-spliced (see
-examples).}
-
-\item{df}{Optionally, a data frame containing one or more fields.}
+\item{x}{An object (list or data frame) containing information for the fields
+to be added.}
 }
 \value{
-A tibble containing one or more fields in the data dictionary.
+A tibble containing one or more fields in the data dictionary with
+all required columns.
 }
 \description{
 Create one or more fields in a REDCap data dictionary
 }
 \examples{
-create_fields(
-  "Variable / Field Name" = "patient_name",
-  "Field Label" = "Patient name"
-)
 
-# When passing a list, it must be unquote-spliced
 x <- list(
   "Variable / Field Name" = "patient_name",
   "Field Label" = "Patient name"
 )
-create_fields(!!!x)
+create_fields(x)
 
-x <- list(
+x <- tibble::tibble(
 `Variable / Field Name` = "patient_name",
 `Field Label` = "Patient name"
 )
-create_fields(!!!x)
+create_fields(x)
 }
