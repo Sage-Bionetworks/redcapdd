@@ -96,5 +96,5 @@ you.
 
 ```{r write_dd, eval = FALSE}
 dd <- create_fields(x)
-write_dd(x, "data_dictionary.csv")
+write_dd(dd, "data_dictionary.csv")
 ```

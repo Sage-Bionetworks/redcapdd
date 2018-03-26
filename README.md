@@ -122,5 +122,5 @@ validator will complain that the empty strings are invalid values;
 
 ``` r
 dd <- create_fields(x)
-write_dd(x, "data_dictionary.csv")
+write_dd(dd, "data_dictionary.csv")
 ```
